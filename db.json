@@ -1,9 +1,9 @@
 {
   "DBZ-universo7": [
     {
-      "id": 2,
-      "name": "Vegeta",
-      "nivelPoder": 480
+      "name": "pepe",
+      "nivelPoder": "567",
+      "id": 2
     },
     {
       "id": 4,
@@ -26,34 +26,14 @@
       "id": 7
     },
     {
-      "name": "trunks",
-      "nivelPoder": "120",
-      "id": 8
-    },
-    {
-      "name": "gotenks",
-      "nivelPoder": "80",
-      "id": 9
-    },
-    {
       "name": "cell",
       "nivelPoder": "180",
       "id": 10
     },
     {
-      "name": "freezer",
-      "nivelPoder": "100",
+      "name": "",
+      "nivelPoder": "",
       "id": 11
-    },
-    {
-      "name": "krilin",
-      "nivelPoder": "5",
-      "id": 12
-    },
-    {
-      "name": "goten",
-      "nivelPoder": "10",
-      "id": 15
     }
   ],
   "DBZ-universo6": [

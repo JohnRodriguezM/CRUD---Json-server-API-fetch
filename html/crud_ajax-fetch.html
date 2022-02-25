@@ -144,6 +144,7 @@
                         let peticion = await fetch(url,options)
                         console.log(peticion)
                         let data = await peticion.json()
+                        location.reload()
                     }
                     catch(err){
                         console.log(err)
@@ -196,6 +197,15 @@
                 catch(err){
 
                 }
+            }
+        })
+        // tratando de solucionar el lio del post
+        d.addEventListener('click',e => {
+            if(!e.target.matches('.edit')){
+                $title.textContent = "push character"
+                $form.nombre.value = '';
+                $form.nivelPoder.value = '';
+                $form.id.value = '';
             }
         })
     </script>
