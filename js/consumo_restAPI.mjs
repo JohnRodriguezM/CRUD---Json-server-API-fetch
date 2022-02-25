@@ -43,6 +43,12 @@ const getData = async () => {
 getData()
 
 
+
+
+
+
+
+
 // proxima clase, creación de CRUD
 /*
 read,

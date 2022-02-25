@@ -19,6 +19,11 @@
       "id": 1,
       "name": "goku",
       "nivelPoder": 500
+    },
+    {
+      "name": "soy el mejor del Universo 7",
+      "nivelPoder": "Infinity supremo",
+      "id": 7
     }
   ],
   "DBZ-universo6": [
@@ -31,11 +36,6 @@
       "id": 2.1,
       "nombre": "jiren",
       "nivelPoder": "650"
-    },
-    {
-      "id": 3.1,
-      "nombre": "carlota",
-      "nivelPoder": 750
     },
     {
       "id": 4.1,
@@ -51,6 +51,11 @@
       "id": 6.1,
       "nombre": "hit",
       "nivelPoder": 450
+    },
+    {
+      "nombre": "me creo el mejor del universo 6",
+      "nivelPoder": "venceme si puedes",
+      "id": 7.1
     }
   ]
 }
