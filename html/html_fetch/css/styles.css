@@ -1,0 +1,27 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    margin: 0 auto;
+    max-width: 900px;
+}
+body{
+    text-align: center;
+}
+table{
+    margin: 45px auto;
+    width: 95%;
+    max-width: 500px;
+
+}
+tr{
+    /* display: flex; */
+   /*  flex-wrap: wrap; */
+    /* max-width:200px */
+}
+tr,td{
+    border: 1px solid black;
+    padding: 10px;
+}

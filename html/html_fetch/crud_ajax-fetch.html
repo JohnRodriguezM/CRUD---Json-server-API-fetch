@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1>CRUD api rest fetch</h1>
+    </header>
+    <main>
+        <section class="crud">
+            <h2 class="crud-title">Push character dbz</h2>
+            <form action="" class="crudForm" id="crudForm">
+                <label for="nombre">character name</label>
+                <input type="text" placeholder="name" id="nombre">
+                <br> <br><br>
+                <label for="nivelPoder">power level</label>
+                <input type="text" placeholder="nivel de poder" id="nivelPoder">
+                <br><br><br>
+                <input type="submit" value="Send new character" id="sub">
+                <input type="hidden" name="id" />
+            </form>
+            <button id="traerDatos">return, no actualizar</button>
+        </section>
+        <section>
+            <h2>see character</h2>
+            <table class="crud-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Nivel de poder</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer></footer>
+    <!-- / template para js -->
+    <template id="crud-template">
+        <tr id="tr-datos">
+            <td class="name "></td>
+            <td class="powerLevel"></td>
+            <td>
+                <!--  <button id="traerDatos"></button> -->
+                <button class="edit">
+                    
+                </button>
+                <button class="delete">
+                    <i class="fa-solid fa-trash-can"></i>
+                </button>
+            </td>
+        </tr>
+    </template>
+
+    <script type="module" src="./js-fetch/index.mjs"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+<!-- let datos = json.forEach((el)=>{
+    $template.querySelector('.name').textContent = el.name;
+    $template.querySelector('.powerLevel').textContent = el.nivelPoder;
+    let clone = d.importNode($template,true)//(elemento que importo, false si no quiero el contenido || true si quiero el contenido)
+    fragment.appendChild(clone)
+})
+$tbody.append(fragment) -->
