@@ -24,10 +24,10 @@
                 <label for="nivelPoder">power level</label>
                 <input type="text" placeholder="nivel de poder" id="nivelPoder">
                 <br><br><br>
-                <input type="submit" value="Enviar">
+                <input type="submit" value="Send new character" id = "sub">
                 <input type="hidden" name="id" />
             </form>
-            <button id="traerDatos">pull data</button>
+            <button id="traerDatos">return, no actualizar</button>
         </section>
         <section>
             <h2>see character</h2>
@@ -82,8 +82,7 @@
         // y si se detiene se puede usar  en la termina ||||       json-server --watch db.json  o nombre y raiz del archivo
         // para cambiar el puerto en el que se despliega mi local host puedo usar el comeando ||||| json-server -w -p (numero del puerto) y (nombre archivo)
 
-
-        let url = 'http://localhost:3000/DBZ-universo7'
+        let url = 'http://localhost:8888/DBZ-universo7'
 
         // fetch recibe dos parametros,cuando no especificamos el 2do parametro que son las options, la respuesta que se da es de tipo get (read)
 
@@ -180,6 +179,8 @@
                 $form.nombre.value = e.target.dataset.name;
                 $form.nivelPoder.value = e.target.dataset.nivelPoder;
                 $form.id.value = e.target.dataset.id;
+                $buttonDatos.style.backgroundColor = "red"
+                $form.sub.value = "enviar cambios"
             }
         })
         // manejo del delete
@@ -200,12 +201,14 @@
             }
         })
         // tratando de solucionar el lio del post
+        //jum
         d.addEventListener('click',e => {
-            if(!e.target.matches('.edit')){
-                $title.textContent = "push character"
-                $form.nombre.value = '';
-                $form.nivelPoder.value = '';
-                $form.id.value = '';
+            if(e.target.matches('#traerDatos')){
+                $title.textContent = "Push character dbz"
+                $form.sub.value = "Send new character"
+                $buttonDatos.style.backgroundColor = "#eeeeee"
+                $form.id.value = null;
+                $form.reset()
             }
         })
     </script>

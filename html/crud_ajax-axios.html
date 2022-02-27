@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js"></script>
     <title>Document</title>
 </head>
 
@@ -14,8 +16,8 @@
     </header>
     <main>
         <section class="crud">
-            <h2 class = "crud-title">agregar persona dbz</h2>
-            <form action="" class="crudForm" id="crudForm">
+            <h2 class="crud-title">agregar persona dbz</h2>
+            <form class="crudForm" id="crudForm">
                 <label for="nombre">Nombre personaje</label>
                 <input type="text" placeholder="name" id="nombre">
                 <br> <br><br>
@@ -25,8 +27,9 @@
                 <input type="submit" value="Enviar">
                 <input type="hidden" name="action" />
             </form>
+            <button id="traerDatos">return, no actualizar</button>
         </section>
-        <section>
+        <section class="character-table">
             <h2>ver personajes</h2>
             <table class="crud-table">
                 <thead>
@@ -49,11 +52,11 @@
             <td class="name "></td>
             <td class="powerLevel"></td>
             <td>
-                <button class = "edit">
-
+                <button class="edit">
+                    edit
                 </button>
-                <button class = "delete">
-
+                <button class="delete">
+                    delete
                 </button>
             </td>
         </tr>
@@ -63,8 +66,72 @@
         const d = document;
         const $table = d.querySelector('.crud-table')
         const $form = d.getElementsByTagName('crudForm')
-        const $template = d.getElementById('"crud-template').content // me interesa la estructura del template, por eso content
+        const $template = d.getElementById('crud-template')
+            .content // me interesa la estructura del template, por eso content
         const fragment = d.createDocumentFragment(); // fragment para insertar todo de un tiro al html
+        const $tbody = document.querySelector('tbody')
+        console.log($tbody)
+        console.log(axios)
+        // otros necesarios
+        const $buttonDatos = d.getElementById('traerDatos')
+
+
+        let url = 'http://localhost:8888/DBZ-universo7'
+        //url de la que se va a realizar el consumo
+
+        const getDataAxios = async () => {
+            try {
+                let response = await axios.get(url)
+                console.log(response)
+                let datos = response.data.forEach((el) => {
+                    $template.querySelector('.name').textContent = el.name;
+                    $template.querySelector('.powerLevel').textContent = el.nivelPoder;
+                    $template.querySelector('.edit').dataset.id = el.id;
+                    $template.querySelector('.edit').dataset.name = el.name;
+                    $template.querySelector('.edit').dataset.nivelPoder = el.nivelPoder;
+                    $template.querySelector('.delete').dataset.id = el.id;
+                    let $clone = d.importNode($template, true)
+                    fragment.appendChild($clone)
+                })
+                $tbody.appendChild(fragment)
+            } catch (err) {
+                console.log(err.response.status)
+                $table.insertAdjacentHTML('afterend',
+                    `<p><b>ha ocurrido un error de tipo ${err.response.status}</b></p>`)
+            } finally {
+                console.log("yo me ejecuto de manera independiente")
+            }
+        }
+
+        d.addEventListener('DOMContentLoaded', getDataAxios)
+
+
+        d.addEventListener('submit', async e => {
+            if(e.target === $form){
+                e.preventDefault()
+                if(!e.target.id.value){
+                    // post ( create )
+                    try{
+                        let options = {
+                        method: 'POST',
+                        headers: {
+                            "Content-type": "application/json; charset=utf-8"
+                        },
+                        body: {
+                            name: e.target.nombre.value,
+                            nivelPoder: e.target.nivelPoder.value,
+                        }
+                    }
+                        let peticion = await axios.post(url,options)
+                    }catch(err){
+                        console.log(err)
+                    }
+                }else{
+                    // peitiicon put
+                }
+            }
+        })
+
     </script>
 
 
