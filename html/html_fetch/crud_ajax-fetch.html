@@ -5,37 +5,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/styles.css">
-    <title>Document</title>
+    <title>Acceso</title>
 </head>
 
 <body>
-    <header>
-        <h1>CRUD api rest fetch</h1>
+    <header class = "header">
+        <h1 class = "header_title">Crud api rest, uso de fetch</h1>
     </header>
     <main>
         <section class="crud">
             <h2 class="crud-title">Push character dbz</h2>
             <form action="" class="crudForm" id="crudForm">
-                <label for="nombre">character name</label>
-                <input type="text" placeholder="name" id="nombre">
-                <br> <br><br>
-                <label for="nivelPoder">power level</label>
-                <input type="text" placeholder="nivel de poder" id="nivelPoder">
-                <br><br><br>
-                <input type="submit" value="Send new character" id="sub">
+                <label for="nombre">Name: </label>
+                <input type="text" placeholder="name" id="nombre" autofocus required>
+                <br>
+                <label for="nivelPoder">Phone number: </label>
+                <input type="text" placeholder="nivel de poder" id="nivelPoder" required />
+                <br>
+                <input type="submit" value="Send new character" id="sub" />
                 <input type="hidden" name="id" />
             </form>
-            <button id="traerDatos">return, no actualizar</button>
+            <button id="traerDatos">ya no quieres editar? click</button>
         </section>
-        <section>
-            <h2>see character</h2>
+        <section  class = "table-container">
+            <div class="table-responsive">
+                <h2>see character</h2>
             <table class="crud-table">
                 <thead>
                     <tr>
-                        <th>Nombre</th>
-                        <th>Nivel de poder</th>
+                        <th>Name</th>
+                        <th>Telefono</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -43,27 +46,32 @@
 
                 </tbody>
             </table>
+        </div>
         </section>
     </main>
-    <footer></footer>
+    <footer>
+        
+    </footer>
     <!-- / template para js -->
     <template id="crud-template">
         <tr id="tr-datos">
-            <td class="name "></td>
-            <td class="powerLevel"></td>
+            <td class="name ">name</td>
+            <td class="powerLevel">cedula</td>
             <td>
-                <!--  <button id="traerDatos"></button> -->
-                <button class="edit">
-                    
-                </button>
-                <button class="delete">
-                    <i class="fa-solid fa-trash-can"></i>
-                </button>
+                <button class="fas fa-edit edit" title="edit"></button>
+                <button class="fa-solid fa-trash-can delete" title="delete"></button>
             </td>
         </tr>
     </template>
 
     <script type="module" src="./js-fetch/index.mjs"></script>
+     <!-- fichero para el manejo del get en el crud -->
+    <script type="module" src="./js-fetch/manejo_Get.mjs"></script>
+    <!--  fichero para el manejo del post en el crud -->
+    <script type="module" src="./js-fetch/manejo_post.mjs"></script>
+    <!-- fichero para el manejo del delete en el crud -->
+    <script type="module" src="./js-fetch/manejo_delete.mjs"></script>
+
 </body>
 
 </html>
