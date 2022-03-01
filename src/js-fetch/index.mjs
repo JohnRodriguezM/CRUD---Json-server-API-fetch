@@ -61,7 +61,7 @@ d.addEventListener("click", (e) => {
     $form.sub.value = "Send new character";
     $buttonDatos.style.backgroundColor = "#eeeeee";
     $buttonDatos.style.width = "30%";
-    $buttonDatos.style.visibility = 'hidden';
+    $buttonDatos.style.display = 'none';
     $form.id.value = null;
     $form.reset();
   }

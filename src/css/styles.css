@@ -9,6 +9,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-size: Helvetica, Arial, sans-serif;
+    scroll-behavior: smooth;
 }
 html{
     margin: 0 auto;
@@ -33,18 +35,21 @@ form{
     text-align: center;
 }
 #traerDatos{
-    visibility: hidden;
-    padding: 10px;
+    margin: auto;
+    color : var(--color-neutro);
+    display: none;
+    padding: 7px;
 }
 #sub{
     margin: auto;
-    width: 40%;
+    width: 60%;
+    padding: 5px;
 }
 .table-container{
     margin: 40px auto;
 }
 table{
-    margin: 45px auto;
+    margin: 30px auto;
     width: 100%;
     max-width: 600px;
 }

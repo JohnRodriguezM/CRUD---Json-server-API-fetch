@@ -1,14 +1,19 @@
 {
   "DBZ-universo7": [
     {
-      "name": "john jairo rodriguez medina",
-      "nivelPoder": "3178333896",
-      "id": 4
-    },
-    {
       "name": "sara camila mendez pabon",
       "nivelPoder": "3112662644",
       "id": 5
+    },
+    {
+      "name": "juan felipe ",
+      "nivelPoder": "456",
+      "id": 6
+    },
+    {
+      "name": "juan perez",
+      "nivelPoder": "3178333897",
+      "id": 7
     }
   ],
   "DBZ-universo6": [

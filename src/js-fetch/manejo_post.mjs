@@ -57,7 +57,7 @@ d.addEventListener("click", (e) => {
     $form.nombre.value = e.target.dataset.name;
     $form.nivelPoder.value = e.target.dataset.nivelPoder;
     $form.id.value = e.target.dataset.id;
-    $buttonDatos.style.visibility = "visible";
+    $buttonDatos.style.display = "block";
     $buttonDatos.style.backgroundColor = "red";
     $buttonDatos.style.width = "300px";
 
