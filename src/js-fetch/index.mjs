@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 export const d = document;
 export const url = "http://localhost:8888/DBZ-universo7";
@@ -61,7 +61,7 @@ d.addEventListener("click", (e) => {
     $form.sub.value = "Send new character";
     $buttonDatos.style.backgroundColor = "#eeeeee";
     $buttonDatos.style.width = "30%";
-    $buttonDatos.style.display = 'none';
+    $buttonDatos.style.display = "none";
     $form.id.value = null;
     $form.reset();
   }

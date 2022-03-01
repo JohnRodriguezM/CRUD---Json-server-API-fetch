@@ -6,6 +6,6 @@ import { PeticionesFetch, d } from "./index.mjs";
 
 const obtener = () => {
   return new PeticionesFetch().getData();
-}
+};
 
 d.addEventListener("DOMContentLoaded", obtener);
